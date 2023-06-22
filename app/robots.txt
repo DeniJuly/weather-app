@@ -1,0 +1,3 @@
+User-Agent: *
+Allow: /
+Sitemap: https://weather-app-deni.vercel.app/sitemap.xml
