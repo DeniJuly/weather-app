@@ -17,8 +17,7 @@ const CardToday = async () => {
           {weather.temp}°C
         </h2>
         <p className="text-gray-500 font-medium text-base md:text-lg dark:text-gray-400">
-          {weather.weather[0].description} |{" "}
-          {moment().format("DD MMMM YYYY HH:ss")}
+          {weather.weather[0].description} | {moment().format("DD MMMM YYYY")}
         </p>
       </div>
       <Image

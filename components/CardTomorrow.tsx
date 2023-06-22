@@ -24,7 +24,7 @@ const CardTomorrow = async ({ day }: CardTomorrowProps) => {
         </h3>
         <p className="text-gray-500 font-medium text-base dark:text-gray-400">
           {weather.weather[0].description} |{" "}
-          {moment().add(day, "d").format("DD MMMM YYYY HH:ss")}
+          {moment().add(day, "d").format("DD MMMM YYYY")}
         </p>
       </div>
     </div>
