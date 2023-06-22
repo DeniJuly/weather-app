@@ -1,5 +1,3 @@
-![Logo](public/logo.webp)
-
 # Weather App
 
 ## Preview
