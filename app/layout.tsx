@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import { Theme } from "@/components";
+import { Analytics } from "@vercel/analytics/react";
 import { Manrope } from "next/font/google";
 
 const manrope = Manrope({ subsets: ["latin"] });
@@ -22,6 +23,7 @@ export default function RootLayout({
         className={`bg-img-light bg-cover bg-no-repeat dark:bg-img-dark ${manrope.className}`}
       >
         <Theme>{children}</Theme>
+        <Analytics />
       </body>
     </html>
   );
