@@ -1,5 +1,5 @@
 import { fetchWeather } from "@/utils";
-import moment from "moment";
+import moment from "moment-timezone";
 import Image from "next/image";
 import React from "react";
 
@@ -7,7 +7,7 @@ interface CardTomorrowProps {
   day: number;
 }
 const CardTomorrow = async ({ day }: CardTomorrowProps) => {
-  const unixTimestamp = moment().add(day, "d").unix();
+  const unixTimestamp = moment().tz("Asia/Jakarta").add(day, "d").unix();
   const result = await fetchWeather(unixTimestamp);
   let weather = result?.data[0];
   return (
@@ -24,7 +24,7 @@ const CardTomorrow = async ({ day }: CardTomorrowProps) => {
         </h3>
         <p className="text-gray-500 font-medium text-base dark:text-gray-400">
           {weather.weather[0].description} |{" "}
-          {moment().add(day, "d").format("DD MMMM YYYY")}
+          {moment().add(day, "d").format("dddd, DD MMMM YYYY")}
         </p>
       </div>
     </div>

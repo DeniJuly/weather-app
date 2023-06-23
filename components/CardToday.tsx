@@ -1,13 +1,13 @@
 import "moment/locale/id";
 
 import { fetchWeather } from "@/utils";
-import moment from "moment";
+import moment from "moment-timezone";
 import Image from "next/image";
 import React from "react";
 
 moment.locale("id");
 const CardToday = async () => {
-  const unixTimestamp = moment().unix();
+  const unixTimestamp = moment().tz("Asia/Jakarta").unix();
   const result = await fetchWeather(unixTimestamp);
   let weather = result?.data[0];
   return (
@@ -17,7 +17,8 @@ const CardToday = async () => {
           {weather.temp}°C
         </h2>
         <p className="text-gray-500 font-medium text-base md:text-lg dark:text-gray-400">
-          {weather.weather[0].description} | {moment().format("DD MMMM YYYY")}
+          {weather.weather[0].description} |{" "}
+          {moment().format("dddd, DD MMMM YYYY")}
         </p>
       </div>
       <Image
